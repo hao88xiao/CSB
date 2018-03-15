@@ -1,86 +1,0 @@
-9
-
-dir
-7140
-svn://172.19.17.121/intf2.0_dev/CrmWebService/WebRoot
-svn://172.19.17.121/intf2.0_dev
-
-
-
-2018-01-29T06:03:13.148047Z
-7130
-liubaidong
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-07827925-faec-4e25-87d7-7edf1eae57c8
-
-META-INF
-dir
-
-pub-js
-dir
-
-theme
-dir
-
-index.jsp
-file
-
-
-
-
-2016-04-12T09:46:30.989152Z
-5f0aacd2c98e7e0bf77473187be378c5
-2013-11-25T07:25:21.298230Z
-4638
-huxz
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2262
-
-images
-dir
-
-listener
-dir
-
-WEB-INF
-dir
-
-common
-dir
-
-errors
-dir
-
