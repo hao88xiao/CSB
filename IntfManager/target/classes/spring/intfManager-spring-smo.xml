@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+                        
+   
+
+	<bean id="crmWebServiceProperties"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="order" value="1" />
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		
+		 <property name="location">
+			<value>classpath:crmwebservice.properties
+			</value>
+		</property>
+	</bean>
+	
+	
+	
+	<bean id="intfManager.sysFacade" class="com.linkage.bss.crm.intf.facade.SysFacadeImpl">
+		<property name="smService">
+			<ref bean="smServiceHttp" />
+		</property>
+	</bean>
+
+	<bean id="intfManager.offerFacade" class="com.linkage.bss.crm.intf.facade.OfferFacadeImpl">
+		<property name="offerSMO">
+			<ref bean="offerManager.offerSMO" />
+		</property>
+		<property name="intfSMO" ref="intfManager.intfSMO" />
+	</bean>
+
+	<bean id="intfManager.custFacade" class="com.linkage.bss.crm.intf.facade.CustFacadeImpl">
+		<property name="soCommitSMO">
+			<ref bean="soManager.soCommitSMO" />
+		</property>
+		<property name="custBasicSMO">
+			<ref bean="custManager.custBasicSMO" />
+		</property>
+		<property name="commonSMO">
+			<ref bean="crmCommons.commonSMO" />
+		</property>
+	</bean>
+
+	<bean id="intfManager.acctFacade" class="com.linkage.bss.crm.intf.facade.AcctFacadeImpl">
+		<property name="acctSMO">
+			<ref bean="acctManager.acctSMO" />
+		</property>
+	</bean>
+
+	<bean id="intfManager.soFacade" class="com.linkage.bss.crm.intf.facade.SoFacadeImpl">
+		<property name="soStoreSMO">
+			<ref bean="soManager.soStoreSMO" />
+		</property>
+	</bean>
+
+
+	<bean id="intfManager.intfSMO" class="com.linkage.bss.crm.intf.smo.IntfSMOImpl">
+		<property name="intfBMO" ref="intfManager.intfBMO" />
+		<property name="unityPayClient" ref="unityPay" />
+		<property name="voucherPrintUrl" value="${crmWebService.voucherPrintUrl}" />
+		<property name="smService" ref="smServiceHttp" />
+		<property name="channelSMO" ref="custManager.channelSMO" />
+		<property name="slcBMO" ref="slcManager.slcBMO" />
+		<property name="rscServiceSMO" ref="resourceClient.rscServiceSMO" />
+		<property name="soQuerySMO" ref="soManager.soQuerySMO" />
+		<property name="billService" ref="billService" />
+		<property name="soSaveBMO" ref="soManager.soSaveBMO" />
+	</bean>
+
+	<bean id="intfManager.SRFacade" class="com.linkage.bss.crm.intf.facade.SRFacadeImpl">
+		<property name="storeClientSMO">
+			<ref bean="storeClient.storeServiceSMO" />
+		</property>
+		<!-- 新的营销资源包上线去掉-->
+		<property name="saleResource" ref="storeclient.SaleResource" />
+		 
+		<property name="storeForOnLineMall" ref="storeClient.StoreForOnLineMall" />
+		<property name="commonClient" ref="crmCommons.commonClient" />
+		<property name="intfSMO" ref="intfManager.intfSMO" />
+	</bean>
+
+	<bean id="intfManager.OfferSpecFacade" class="com.linkage.bss.crm.intf.facade.OfferSpecFacadeImpl">
+		<property name="offerSMO">
+			<ref bean="offerManager.offerSMO" />
+		</property>
+		<property name="offerSpecSMO">
+			<ref bean="offerSpecManager.offerSpecSMO" />
+		</property>
+		<property name="intfSMO" ref="intfManager.intfSMO" />
+	</bean>
+
+	<bean id="storeClient.StoreForOnLineMall"
+		class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="${intfManager.srUrl}" />
+		<property name="serviceInterface"
+			value="com.linkage.bss.crm.intf.storeclient.StoreForOnLineMall" />
+	</bean>
+	<!-- SaleResourceWebServiceWeb营销资源包 -->
+	<!-- -->
+	<bean id="storeclient.SaleResource"
+		class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="${saleResource.srUrl}" />
+		<property name="serviceInterface"
+			value="com.linkage.bss.crm.intf.storeclient.SaleResource" />
+	</bean>
+	 
+</beans>

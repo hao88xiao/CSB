@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+ <import resource="crm-model-spring-db.xml" />   
+<!--<import resource="crm-model-spring-jndidb.xml" />-->
+	<import resource="acctManager-spring-all.xml" />
+	<import resource="crmCommons-spring-all.xml" />
+	<import resource="prodSpecManager-spring-all.xml" />
+	<import resource="offerSpecManager-spring-all.xml" />
+	<import resource="custManager-spring-all.xml" /> 
+	<import resource="nciisClient-spring-all.xml" />
+	<import resource="offerManager-spring-all.xml" />
+	<import resource="OdClient-spring-smo.xml" />
+	<import resource="soManager-spring-all.xml" />
+	<import resource="ResourceClient-spring-smo.xml" />
+	<import resource="ruleManager-spring-all.xml" />
+	<import resource="StoreClient-spring-smo.xml" />
+	<import resource="chargeManager-spring-all.xml" />
+	<import resource="soServiceManager-spring-all.xml" />
+	<import resource="classpath:bss/systemmanager/sys/sys-smClient-spring.xml"/>
+	<import resource="localInterface-spring-service.xml"/>
+	<import resource="intfManager-spring-smo.xml" />
+	<import resource="intfManager-spring-bmo.xml" />
+	<import resource="intfManager-spring-dao.xml" />
+	<import resource="soQueryManager-spring-all.xml" />
+	<!--<import resource="soHisManager-spring-all.xml" />
+	--><import resource="bssCrmWebServiceClient-spring-smo.xml" />
+	<!--  <import resource="LogServiceManager-spring-all.xml"/> -->
+</beans>
