@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:spring/crmWebService-spring.xml</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>jaxws-servlet</servlet-name>
+		<servlet-class>com.sun.xml.ws.transport.http.servlet.WSSpringServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>jaxws-servlet</servlet-name>
+		<url-pattern>/customer</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>jaxws-servlet</servlet-name>
+		<url-pattern>/order</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>jaxws-servlet</servlet-name>
+		<url-pattern>/crm</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>jaxws-servlet</servlet-name>
+		<url-pattern>/agent</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>jaxws-servlet</servlet-name>
+		<url-pattern>/rsc</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>jaxws-servlet</servlet-name>
+		<url-pattern>/sr</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>jaxws-servlet</servlet-name>
+		<url-pattern>/hb</url-pattern>
+	</servlet-mapping>
+
+	<!-- Register Spring Listener -->
+	<listener>
+		<listener-class>com.linkage.bss.commons.spring.ContextHolderListener</listener-class>
+	</listener>
+	<error-page>
+    <error-code>404</error-code>
+    <location>/errors/404.html</location>
+  </error-page>
+  
+  <error-page>
+    <error-code>500</error-code>
+    <location>/errors/500.html</location>
+  </error-page>
+  
+  <error-page>
+    <error-code>503</error-code>
+    <location>/errors/503.html</location>
+  </error-page>
+</web-app>

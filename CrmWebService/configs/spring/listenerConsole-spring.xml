@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+   
+	<import resource="listener-spring-all.xml" />
+	
+	<!-- 以下是需要开发人员自己修改的配置，把defaultDataSource修改为自己工程中的数据源名字 -->
+	<alias name="dataSource" alias="listenerDataSource" />
+	<!-- bean的名字不能修改，需要配置的数据，为在listener_conf表中SYSTEM_CODE的数据 -->
+	<bean id="listenerConsoleType" class="java.lang.String">
+		<constructor-arg value="IM" />
+	</bean>
+	<!-- 以下是需要开发人员自己添加的配置,主要是spring的配置文件-->
+	<import resource="intfManager-spring-all.xml" />
+	
+	<!-- 本机测试时用
+	<import resource="crm-model-spring-db.xml" />-->
+	<!-- 发布时用 -->
+	<!-- <import resource="crm-model-spring-jndidb.xml" />-->
+	
+	
+	<!-- 
+	<import resource="soMsgListener-spring-all.xml" />
+	<import resource="RscClient-spring-webservice.xml" />
+	<import resource="OdClient-spring-webservice.xml" />
+	<import resource="localInterface-spring-service.xml"/>
+	<import resource="soMsgListener-spring-smo-dismantle.xml" />
+	<import resource="soServiceManager-spring-all.xml" />
+	<import resource="soManager-spring-all.xml" />
+	<import resource="prodSpecManager-spring-all.xml" />
+	<import resource="custManager-spring-all.xml" />
+	<import resource="offerSpecManager-spring-all.xml" />
+	<import resource="ruleManager-spring-all.xml" />
+	<import resource="offerManager-spring-all.xml" />
+	<import resource="acctManager-spring-all.xml" />
+	<import resource="crmCommons-spring-all.xml" />
+	<import resource="StoreClient-spring-smo.xml" />
+	<import resource="smClient-spring-smo.xml" />
+	<import resource="nciisClient-spring-all.xml" />
+	
+	<import resource="RscClient-spring-webservice.xml" />
+	
+	 <import resource="chargeManager-spring-all.xml" />
+	<import resource="bssCrmWebServiceClient-spring-smo.xml" />
+	<import resource="soMsgListener-spring-smo-atomDealPreOrder.xml" />
+	<import resource="soMsgListener-spring-smo-batchShift.xml" />
+	-->
+	
+	<!-- 发布时用 -->
+	<!-- <import resource="soMsgListener-spring-jndidb.xml" />-->
+	<!-- 本机测试时用
+	<import resource="crm-model-spring-db.xml" />
+	 -->
+</beans>

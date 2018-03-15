@@ -1,0 +1,12 @@
+<@compress single_line=true>
+<response>
+	<resultCode>${resultCode}</resultCode>
+	<resultMsg>${resultMsg}</resultMsg>
+	<result>${result}</result>
+<<<<<<< .mine
+	<PAY_INDENT_ID>${payIndentId}</PAY_INDENT_ID>
+=======
+	<PAY_INDENT_ID>${PAY_INDENT_ID}</PAY_INDENT_ID>
+>>>>>>> .r6060
+</response>
+</@compress>

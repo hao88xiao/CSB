@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bss-serviceframework-config>
+
+	<services>		
+		<include resource="/WEB-INF/xrainbow-service-listener-console.xml" />
+	</services>
+	<users>
+		<user id="1" name="默认AJAX用户" code="DEFAULT_AJAX_USER" password="12345" flowThreshold="-1" noCheckLimit="Y" />
+	</users>
+	<userServices>
+		<!--
+			<use userId="1" serviceId="8" debugLevel="1" /> <use userId="1" serviceId="2" debugLevel="1" /> <use userId="1"
+			serviceId="3" debugLevel="1" /> <use userId="2" serviceId="9" debugLevel="1" /> <use userId="3" serviceId="4"
+			debugLevel="1" /> <use userId="3" serviceId="5" debugLevel="1" /> <use userId="3" serviceId="1" debugLevel="1" />
+		-->
+	</userServices>
+
+</bss-serviceframework-config>

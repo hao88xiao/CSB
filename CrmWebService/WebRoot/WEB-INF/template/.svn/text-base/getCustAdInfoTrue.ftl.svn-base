@@ -1,0 +1,30 @@
+<@compress single_line=true>
+<response>
+	<resultCode>${resultCode}</resultCode>
+	<resultMsg>${resultMsg}</resultMsg>
+	<accNbr>${accNbr!""}</accNbr>
+	<secAccNbr>${secAccNbr!""}</secAccNbr>
+	<relateAccNbr>${relateAccNbr!""}</relateAccNbr>
+	<custName>${custName!""}</custName>
+	<custLevel>${custLevel!""}</custLevel>
+	<custGroup>${custGroup!""}</custGroup>
+	<custAddress>${custAddress!""}</custAddress>
+	<offeringName>${prodName!""}</offeringName>
+	<identifyType>${identifyTypeName!""}</identifyType>
+	<identityNum>${identityNum!""}</identityNum>
+	<userAddress>${userAddress!""}</userAddress>
+	<hlrNum>${hlrNum!""}</hlrNum>
+	<hlrName>${hlrName!""}</hlrName>
+	<ADSpeed>${ADSpeed!""}</ADSpeed>
+	<offerListInfo>
+		<#list resultObj as c>
+		<offerInfo>
+			<offerSpecId>${c.offerSpecId!""}</offerSpecId>
+			<offerSpecName>${c.offerSpecName!""}</offerSpecName>
+		</offerInfo>
+		</#list>
+	</offerListInfo>
+	<status>${status!""}</status>
+	<accessNumber>${mainAccessNumber!""}</accessNumber>
+</response>
+</@compress>

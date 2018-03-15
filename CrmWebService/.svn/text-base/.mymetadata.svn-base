@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="CrmWebService"
+  id="myeclipse.1341211004500"
+  context-root="/CrmWebService"
+  j2ee-spec="5.0"
+  archive="CrmWebService.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
